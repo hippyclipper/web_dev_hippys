@@ -1,0 +1,85 @@
+
+/* * {
+    outline: red solid 1px;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    background-image: url(./img/pexels-lumn-167699.jpg);
+    /* background-position: center;  */
+    background-size: auto 150vh; 
+
+
+}
+
+#test-background{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(154, 205, 50,50%);
+    width: 100vw;
+    height: 100vh;
+    z-index: -100;
+    opacity: 0.5;
+}
+
+.link-tree{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 5vw;
+    width: 35vw;
+}
+
+.link-tree > h1{
+    margin: 0;
+    padding: 0;
+}
+
+.link-tree > img{
+    margin: 0;
+    width: 0;
+    padding: 0;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
+}
+
+.link-tree > ul{
+    display: inline-block;  
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 50%;
+}
+
+.link-tree > ul > li {
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    background-color: grey;
+    margin-top: .5vw;
+    height: 1.5vw;
+    border-radius: 25px;
+    font-weight: bold;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-tree > ul > li:hover{
+    background-color: hsl(0, 0%, 75%);
+    transform:scale(1.1,1.1);
+    outline: hsl(0, 0%, 0%) solid 2px;
+}
