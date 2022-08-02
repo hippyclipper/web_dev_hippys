@@ -8,7 +8,7 @@ var count = 0;
 
 var questions = [ 
     {
-        q_text: "what is your favorite color",
+        q_text: "what color are stop signs",
         a_text: "red",
         b_text: "green",
         c_text: "yellow",
@@ -22,6 +22,30 @@ var questions = [
         c_text: "strawberry",
         d_text: "lettuce",
         answer: "d",
+    },
+    {
+        q_text: "who is an economist",
+        a_text: "john keynes",
+        b_text: "barak obamna",
+        c_text: "cardi b",
+        d_text: "elon musk",
+        answer: "a",
+    },
+    {
+        q_text: "what cannot fly",
+        a_text: "a plane",
+        b_text: "a bird",
+        c_text: "a go kart",
+        d_text: "a spaceship",
+        answer: "c",
+    },
+    {
+        q_text: "what should you do after viewing this website",
+        a_text: "offer me gainful employment",
+        b_text: "commit a crime",
+        c_text: "gamble away your life savings",
+        d_text: "crash your car",
+        answer: "a",
     },
 ];
 
