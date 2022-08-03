@@ -4,7 +4,8 @@ var list_c = document.getElementById("list_c");
 var list_d = document.getElementById("list_d");
 var questionText = document.getElementById("question");
 var count = 0;
-
+var listHTML =  document.getElementById("quiz-list").innerHTML;
+var card = document.getElementById("quiz-list");
 
 var questions = [ 
     {
@@ -51,6 +52,7 @@ var questions = [
 
 
 function loadQuiz() {
+    card.innerHTML = listHTML;
     questionText.innerHTML = questions[count].q_text;
     list_a.innerText = questions[count].a_text;
     list_b.innerText = questions[count].b_text;
@@ -63,8 +65,13 @@ function submitQuestion(){
     count++;
     if (count >= questions.length) {
         count = 0;
+        questionText.innerHTML = " ";
+        card.innerHTML = "<h1>here</h1>";
+    }else{
+
+        loadQuiz();
     }
-    loadQuiz();
+
 }
 
 
