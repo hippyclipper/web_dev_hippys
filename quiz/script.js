@@ -1,3 +1,12 @@
+
+
+// TODO
+//check correct answer
+//better font
+//reload at end of quiz and change button text
+// display corrext score
+
+
 var list_a = document.getElementById("list_a");
 var list_b = document.getElementById("list_b");
 var list_c = document.getElementById("list_c");
@@ -6,6 +15,7 @@ var questionText = document.getElementById("question");
 var count = 0;
 var listHTML =  document.getElementById("quiz-list").innerHTML;
 var card = document.getElementById("quiz-list");
+var totalScore = 0;
 
 var questions = [ 
     {
@@ -52,21 +62,63 @@ var questions = [
 
 
 function loadQuiz() {
-    card.innerHTML = listHTML;
     questionText.innerHTML = questions[count].q_text;
     list_a.innerText = questions[count].a_text;
     list_b.innerText = questions[count].b_text;
     list_c.innerText = questions[count].c_text;
     list_d.innerText = questions[count].d_text;
+    var radioButtons = document.getElementsByName("answer");
+    var checkedButton = NaN;
+    var selected = false;
+    for(let i = 0; i < radioButtons.length; i++){
+        radioButtons[i].checked = false;
+    }
 
 }
 
+
+function checkAnswer(){
+    var radioButtons = document.getElementsByName("answer");
+    var checkedButton = NaN;
+    var selected = false;
+    for(let i = 0; i < radioButtons.length; i++){
+        if (radioButtons[i].checked){
+            checkedButton = radioButtons[i].id;
+            selected = true;
+        }
+    }
+
+    if (selected){
+        if (checkedButton === questions[count].answer){
+            totalScore++;
+        }       
+    }
+
+
+    if (selected){
+        count++;  
+    }
+
+
+    //console.log(questions[count].answer);
+
+
+}
+
+
+var submited = false;
 function submitQuestion(){
-    count++;
+    checkAnswer();
+
     if (count >= questions.length) {
+        submited = true;
         count = 0;
         questionText.innerHTML = " ";
-        card.innerHTML = "<h1>here</h1>";
+        card.innerHTML = `<h2>${totalScore}/${questions.length}</h2>`;
+        var button = document.getElementById("sub-button");
+        button.innerText = "restart quiz";
+    }else if (submited){
+        location.reload()
     }else{
 
         loadQuiz();
